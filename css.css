@@ -136,6 +136,7 @@ h6 {
     font-weight: var(--fw-b);
     color: var(--color-green);
     padding-inline-end: 1rem;
+    font-style: normal;
 }
 
 .card__info--discount{
