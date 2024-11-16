@@ -1,0 +1,180 @@
+:root{
+    --fs-l:2rem;
+    --fs-m:0.875rem;
+    --fs-s:0.75rem;
+
+    --fw-b:700;
+    --fw-m:500;
+    --lh-150:1.5;
+    --ls-5:0.3125rem;
+
+    --color-cream:#F2EAE2;
+    --color-white:#ffffff;
+    --color-gray:#6C7289;
+    --color-dark:#1C232B;
+    --color-green:#3D8168;
+    --color-darkgreen:#1A4032;
+}
+
+/* general reset */
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+	/* 3. Add accessible line-height */
+	line-height: 1;
+    font-family: 'montserrat', sans-serif;
+    overflow: hidden;
+	/* 4. Improve text rendering */
+    background-color: var(--color-cream);
+	-webkit-font-smoothing: antialiased;
+}
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+/* 8. Improve line wrapping */
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+/* styles */
+#main-content {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    height: 100vh;
+    padding-inline: 1rem;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 37.5rem;
+    border-radius: 1rem;
+    background-color: var(--color-white);
+    color: var(--color-gray);
+    text-align: start;
+    font-size: var(--fs-m);
+    font-weight: var(--fw-m);
+    overflow: hidden;
+    
+}    
+
+.card__img--responsive {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__info {
+    display: grid;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.card__info--category{
+    letter-spacing: var(--ls-5);
+    font-size: var(--fs-s);
+    text-transform: uppercase;
+    padding-block-end: 1.25rem;
+}
+
+.card__info--title{
+    font-family: 'fraunces';
+    font-size: var(--fs-l);
+    color: var(--color-dark);
+    padding-block-end: 1.5rem;
+}
+
+.card__info--desc{
+    line-height: var(--lh-150);
+    padding-block-end: 1.875rem;
+}
+
+.card__info--price{
+    display: flex;
+    align-items: center;
+    padding-block-end: 1.875rem;
+}
+
+.card__info--current-price{
+    font-family: 'fraunces';
+    font-size: var(--fs-l);
+    font-weight: var(--fw-b);
+    color: var(--color-green);
+    padding-inline-end: 1rem;
+}
+
+.card__info--discount{
+    text-decoration: line-through;
+    font-size: var(--fs-s);
+}
+
+button{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    font-weight: var(--fw-b);
+    padding-block: 0.875rem;
+    border: 0;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+button:hover{
+    background-color: var(--color-darkgreen);
+    cursor: pointer;
+}
+.card__btn--icon{
+    width: 1.125rem;
+}
+
+
+/* Media Query for Larger Screens */
+@media (max-width: 427px) {
+    .card {
+        grid-template-columns: 1fr;
+    }
+    .card__img {
+        height: 12rem; /* Adjusts to the image height */
+    }
+    .card__img--responsive {
+        content: url('./images/image-product-mobile.jpg'); /* Switches to mobile image */
+    }
+}
